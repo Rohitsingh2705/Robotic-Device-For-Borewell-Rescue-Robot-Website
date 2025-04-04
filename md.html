@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Dashboard</title>
+    <link rel="stylesheet" href="md.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="live-readings">
+            <h2>Live Readings</h2>
+            <div class="readings">
+                <p>Temperature: <span id="temperature">--</span> °C</p>
+                <p>Humidity: <span id="humidity">--</span> %</p>
+                <!-- Add more readings here -->
+            </div>
+        </div>
+        <div class="camera">
+            <h2>Live Camera Feed</h2>
+            <div class="video-container">
+                <iframe src="https://www.example.com/live-camera" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="temperature-sensors">
+            <h2>Temperature Sensors</h2>
+            <div class="sensor-list">
+                <div class="sensor">
+                    <h3>Sensor 1</h3>
+                    <p>Current Temperature: <span id="sensor1">--</span> °C</p>
+                </div>
+                <div class="sensor">
+                    <h3>Sensor 2</h3>
+                    <p>Current Temperature: <span id="sensor2">--</span> °C</p>
+                </div>
+                <!-- Add more sensors as needed -->
+            </div>
+        </div>
+    </div>
+    <script src="md.js"></script>
+</body>
+</html>

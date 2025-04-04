@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Webcam Example</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+    
+    #videoElement {
+        width: 100%;
+        max-width: 640px;
+        height: auto;
+        border: 2px solid #333;
+        background-color: #000;
+    }
+    
+    #controls {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <h1>Access Webcam Example</h1>
+    <video id="videoElement" autoplay></video>
+    <div id="controls">
+        <button onclick="startVideo()">Start Webcam</button>
+        <button onclick="stopVideo()">Stop Webcam</button>
+    </div>
+    
+    <script>
+        let videoStream;
+
+        // Function to start webcam stream
+        async function startVideo() {
+            try {
+                videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                const videoElement = document.getElementById('videoElement');
+                videoElement.srcObject = videoStream;
+            } catch (error) {
+                console.error('Error accessing media devices.', error);
+            }
+        }
+
+        // Function to stop webcam stream
+        function stopVideo() {
+            if (videoStream) {
+                const tracks = videoStream.getVideoTracks();
+                tracks.forEach(track => track.stop());
+                videoStream = null;
+                const videoElement = document.getElementById('videoElement');
+                videoElement.srcObject = null;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Pop-up Example</title>
+<link rel="stylesheet" href="login_pop.css">
+</head>
+<body>
+
+<div class="login-container">
+    <button id="loginBtn">Login</button>
+    <div class="login-popup" id="loginPopup">
+        <div class="login-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>Login Form</h2>
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="login_pop.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* styles.css */
+#scrollToggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    opacity: 0;
+    z-index: -1;
+  }
+  
+  #scrollUpBtn {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #scrollUpBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Adjust visibility based on checkbox state */
+  #scrollToggle:checked ~ #scrollUpBtn {
+    display: block;
+  }
+  

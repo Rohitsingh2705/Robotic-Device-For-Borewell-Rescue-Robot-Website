@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Integrated Camera</title>
+<style>
+    body {
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        display: flex; /* Ensure flex layout */
+        
+    }
+
+
+    h1 {
+        text-align: center;
+        width: 100%;
+        color: white;
+        margin: 0;
+        padding: 10px 0;
+        color: black;
+    }
+
+    .sidebar {
+        width: 350px;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar h1 {
+        color: white;
+        
+    }
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .sidebar ul li a:hover {
+        color: #007bff;
+    }
+
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .videoholder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #videoElement {
+        width: 100%;
+        max-width: 950px;
+        height: 650px;
+        border: 2px solid #333;
+        background-color: #000;
+    }
+
+    #controls {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .start {
+        background-color: green;
+    }
+
+    .start:hover {
+        background-color: rgb(67, 235, 67);
+    }
+
+    .stop {
+        background-color: red;
+    }
+
+    .stop:hover {
+        background-color: rgb(235, 87, 34);
+    }
+
+    .capture {
+        height: 60px;
+        width: 150px;
+        border-radius: 5px;
+        background-color: ;
+        font-size: 20px;
+        color: white;
+        border: 1px solid black;
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        margin-left: 50px;
+        align-items: center;
+        background-color:rgb(51, 143, 229);
+    }
+
+    .capture:hover {
+        color: black;
+        background-color: lightblue;
+    }
+
+   
+</style>
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <h1>CURRENT LOCATION</h1>
+      <CENTER>  <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.642716217565!2d77.09020437488687!3d11.065390889101485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f8a655555555%3A0xa3da0cb94e76285c!2sPSG%20Institute%20of%20Technology%20and%20Applied%20Research%20(PSG%20iTech)!5e0!3m2!1sen!2sin!4v1720963890524!5m2!1sen!2sin" width="90%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div> </CENTER>
+
+    <div class="content">
+        <h1 class="mainheading">Access Robot Camera</h1>
+
+        <div class="videoholder">
+            <video id="videoElement" autoplay></video>
+            <button onclick="captureImage()" class="capture">Capture Image</button>
+        </div>
+
+        <div id="controls">
+            <button onclick="startVideo()" class="start">Start Camera</button>
+            <button onclick="stopVideo()" class="stop">Stop Camera</button>
+        </div>
+    </div>
+    
+    <script>
+        let videoStream;
+
+        // Function to handle errors
+        function handleError(error) {
+            console.error('Error accessing media devices:', error);
+            alert('Error accessing your camera. Please check your browser permissions and try again.');
+        }
+
+        // Function to start camera stream
+        async function startVideo() {
+            try {
+                videoStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+                const videoElement = document.getElementById('videoElement');
+                videoElement.srcObject = videoStream;
+            } catch (error) {
+                handleError(error);
+            }
+        }
+
+        // Function to stop camera stream
+        function stopVideo() {
+            if (videoStream) {
+                const tracks = videoStream.getVideoTracks();
+                tracks.forEach(track => track.stop());
+                videoStream = null;
+                const videoElement = document.getElementById('videoElement');
+                videoElement.srcObject = null;
+            }
+        }
+
+        // Function to capture image from video stream
+        function captureImage() {
+            if (videoStream) {
+                const videoElement = document.getElementById('videoElement');
+                const canvas = document.createElement('canvas');
+                canvas.width = videoElement.videoWidth;
+                canvas.height = videoElement.videoHeight;
+                canvas.getContext('2d').drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+                // Create image element to display captured image
+                const capturedImage = new Image();
+                capturedImage.src = canvas.toDataURL('image/png');
+
+                // Display captured image in a new window or modal
+                const newWindow = window.open();
+                newWindow.document.write('<img src="' + capturedImage.src + '" width="100%">');
+            } else {
+                alert('Please start the camera first.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* original */
+            --primary: #F8EDE3;
+            --secondary: #DFD3C3;
+            --tertiary: #D0B8A8;
+            --dark: #8D493A;
+            --accent: #A0522D;
+
+            /* grey and white */
+            /* --primary: #fff;
+            --secondary: #ddd;
+            --tertiary: #cbcbcb;
+            --dark: #818181;
+            --accent: #a6a6a6; */
+            --font-main: 'Lato', sans-serif;
+            --header-height: 10vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--primary);
+            scroll-behavior: smooth;
+            padding: 0 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: var(--header-height);
+            background-color: var(--tertiary);
+            background-color: var(--tertiary);
+            color: var(--primary);
+            text-shadow: 2px 2px var(--dark);
+        }
+
+        /* Header Styling */
+        header h1 {
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 2.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header h1:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main content Styling */
+        .content_area {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--secondary);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .content_area h3 {
+            font-weight: 700;
+            text-decoration: underline;
+            letter-spacing: 1px;
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .content_area ul {
+            list-style: none;
+            padding-left: 2rem;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+
+        .content_area ul li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .content_area ul li::before {
+            content: "✔";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.25rem;
+            top: 0;
+        }
+
+        /* Images Styling */
+        .image {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .image img {
+            height: 40vh;
+            width: 30vw;
+        }
+
+        .img1,
+        .img2 {
+            flex: 1;
+            margin: 0 1rem;
+            border: 2px solid var(--dark);
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .img1 img,
+        .img2 img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .img1:hover,
+        .img2:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.6s;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>HOW TO USE THIS INVENTION</h1>
+    </header>
+    <section class="content_area">
+        <h3>The use of the invention is explained stepwise step: -</h3>
+        <ul>
+            <li>
+                Firstly the Rescue robot would be send inside the borewell through manly pulley via help of steel ropes
+                to prevent breakage of ropes at any undecided case.
+            </li>
+            <li>
+                Two way communication system would come in action, via camera and strong bright torch we'll locate the
+                trapped person's position, then via microphone and transmitter we'll try to contact the person if
+                conscious or not.
+            </li>
+            <li>
+                If found unconscious then we'll provide water supply from the surface via pipe.
+            </li>
+            <li>
+                Meanwhile Temperature sensor and gas sensor would provide exact readings of the atmospheric conditions
+                inside the borewell to the rescue team.
+            </li>
+            <li>
+                Automatic hand gesture control robotic arms would come in action, through camera, the arms (operated by
+                the team through hand gesture control system), would hold the trapped person safely and pull it towards
+                the robots base.
+
+            </li>
+            <li>
+                Pulse oximeter incribed on the palm of the robotic hand would regularly check and provide the readings
+                of oxygen saturation levels of the person to the team.
+            </li>
+            <li>
+                If found low oxygen levels, then we'll provide oxygen from the surface via pipe.
+            </li>
+            <li>
+                The final step, Telescopic gear mechanism, after grabing the person the telescopic mechanism would
+                expand downwards (in a straight line) automatically until it reaches down to provide a base to the
+                person for ensuring extraa safety.
+            </li>
+            <li>In continuation to the 8th point, a rubber balloon attached to the telescopic mechanism would inflate
+                down to provide base to the person for stablization.</li>
+            <li>10. The balloon would be filled with compressed air via pneumatic pipe given from the
+                surface that goes through the telescopic gear mechanism (Note: this mechanism is attached to the robots
+                outframe and is hollow from inside for passage of pneumatic pipe.)</li>
+            <li>
+                11. After analyzing each procedure step-by-step, it's time to pull the robot back towards the surface
+                with the trapped person, via manly pulley.
+            </li>
+        </ul>
+    </section>
+    <div class="image">
+        <div class="img1">
+            <img src="Image 1.jpeg" alt="how it work">
+        </div>
+        <div class="img2">
+            <img src="Image 2.jpeg" alt="diagram">
+        </div>
+    </div>
+
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.image img');
+            const modal = document.getElementById('imgModal');
+            const modalImg = document.getElementById('imgFull');
+            const closeBtn = document.getElementsByClassName('close')[0];
+
+            images.forEach(image => {
+                image.addEventListener('click', function () {
+                    modal.style.display = 'block';
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

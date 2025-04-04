@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borewell Rescue</title>
+</head>
+    <body>
+        <div class="myp">
+            <div class
+            ="myp2">
+
+  <a href="htu.html" class="linkk"> <button class="htuBtn">HOW TO USE</button> </a>
+
+                <ul>
+                    <li><a href="#" onclick="alert('You are already at Home 🙏')">Home</a></li>
+                    <li><a href="#" class="aboutUs" id="aboutUs">About Us</a></li>
+                    <li><a href="https://forms.gle/rMVe7s7qcrhKEwJs9">Buy/Rent</a></li>
+                    <li><a href="#contactUs">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div id="aboutus_popup">
+
+                <span class="closee" onclick="closeeLogin()">x</span>
+
+                <center><h2>About Us:    Mechtrovize Solutions</h2></center>
+
+<h3>- Core Mission:</h3> <br>
+• Rescuing individuals trapped in borewells using advanced manufacturing and AI-driven technologies. <br> <br>
+
+• Helping farmers and other in taking out equipment and submersibles droped in borewell for repairing and replacement. <br> <br>
+  
+<h3>- Services: </h3> <br>
+• Offering robotic machines for rescue operations available for purchase and rental. <br> <br>
+• Collaborating closely with NDRF (National Disaster Response Force) and SDRF (State Disaster Response Force). <br> <br>
+
+<h3>- Educational Resources: </h3> <br>
+• Providing specific teaching modules accessible via individual login IDs and passwords. <br><br>
+• Offering comprehensive study materials on our cutting-edge robotic technologies. <br> <br>
+
+<h3>- Unique Technologies: </h3> <br>
+• Hand gesture control robotic arms. <br> <br>
+• Telescopic gear mechanism for enhanced precision and control. <br> <br>
+
+<h3>- Founders: </h3> <br>
+  - Rohit Singh <br>
+  - Shivam Pandey <br>
+  - Piyush Kumar Bharwal
+
+
+
+            </div>
+          
+            <div class="content"> <h1>SOMEONE IN TROUBLE?</h1>
+            <p>Meet our borewell rescue robot: A high-tech solution designed to navigate narrow shafts and locate trapped individuals underground swiftly. With advanced sensors and a durable build, it ensures precise mapping and real-time data transmission, enhancing efficiency and safety in rescue operations.
+            </p> 
+            <div class="login-container">
+                <button type="button" id="loginBtn"><span></span>START RESCUE OPERATION</button>
+                <div class="login-popup" id="loginPopup">
+                    <div class="login-content">
+                        <span class="close" onclick="closeLogin()">&times;</span>
+                        <h2 class="login-heading">Login Form</h2>
+                        <form id="loginForm">
+                            <label for="username">Robot ID</label>
+                            <input type="text" placeholder="Robot ID" id="username" name="username" required>
+                           <br><br> <label for="password">Password</label>
+                            <input type="password" placeholder="---------" id="password" name="password" required style="margin-left: 3px;">
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div> <br> <br> <br> <br> <br> <br> <br>
+                <div class="scroll">
+                    <a href="#section2" class="scroll-down-button">
+                        Scroll Down
+                        <svg class="arrow-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20L18 14 17 13 13 17V4h-2v13L7 13 6 14z"/></svg>
+                    </a>
+                </div>
+                                
+                            <br><br><br><br><br><br><br>
+
+                <div id="section2">
+                    <h1>ABSTRACT</h1>
+
+                        <p>In recent years, there has been a rise in bore well accidents where children and animals fall into uncovered bore wells. This project focuses on designing a system that can rescue the child or animal easily without causing any discomfort, such as scraping the well walls. The system is a lightweight, compact setup with a cable rope attached to a deflated balloon, which is lowered below the child's or animal's depth and then inflated. The system is managed by a rotating rope drum, a cable rope, and a hand gesture controlled robotic arm. The design adapts to bore well diameters ranging from 4 to 12 inches. The depth and posture of the child or animal are monitored through a camera with a live detector. The project aims to reduce rescue time and associated risks. The rescue process is technique-oriented, with depth and posture playing crucial roles, as determined by the camera and live detector. Continuous oxygen supply is provided to prevent respiratory issues. Once the depth and posture are determined, the deflated balloon is sent below the child or animal and inflated. When inflated, the cable rope is raised to position the balloon so that the child or animal sits comfortably on it. The hand gesture controlled robotic arm secures the child or animal, locking them tightly between the arm and the balloon. The entire system is then raised gradually for a safer lift. The arm can support up to 15 kilograms. The raising and lowering are controlled by the rotating rope drum, driven by a motor. Compressed air from an additional air compressor operates the robotic arm, and the lift operation is monitored by the camera.</p>
+
+                        <br> <br> <br>
+
+                            <hr width="50%" color="orange" size="5px">
+                            <br> <br> <br> 
+
+                            <h1>1. INTRODUCTION</h1>
+                            <p>
+                                To meet the ever-growing water demands for industrial, agricultural, and commercial purposes, bore wells are being increasingly dug. Due to extensive groundwater depletion, water is not accessible everywhere, necessitating the use of bore wells to tap into aquifers deep underground. These bore wells are typically found in areas with human activity, and many fail to produce groundwater, often remaining uncovered, posing significant hazards to human life. <br> <br>
+
+                                These uncovered bore wells are typically inadequately sealed, often covered only with polythene sacks or fragile cement blocks, which are insufficient for closing off potentially dangerous holes. Young children and animals frequently fall into these open bore wells and become trapped. <br> <br>
+                                
+                                Rescuing trapped children and animals from bore wells is both challenging and perilous. Even minor delays in rescue efforts can result in fatalities. Additionally, lifting the victims from the narrow confines of bore wells is a laborious task. Victims often endure trauma from the fall, experiencing either psychological distress from being confined in a restricted space for extended periods or physical trauma due to oxygen deprivation, which can lead to fatality. <br> <br>
+                                
+                                The Bore Well Rescue System addresses these issues effectively. It is designed to be safe, economical, and most importantly, quick. The system is capable of monitoring the trapped victim, providing an oxygen supply, and offering a supportive platform to lift them to the surface. It is adaptable to various well diameters, lightweight, and simplifies the rescue process, making it suitable for both children and animals.
+                            </p> 
+ <br> <br> <br> 
+ <div class="hrholder"> 
+    <hr width="50%" color="orange" size="5px">
+ </div>
+ <br> <br> <br> 
+
+
+ <h1>2.  DOCUMENTRY ANALYSIS</h1>
+
+ <p>Borewell mishaps are taking place very frequently across the globe. But the number of failures in rescue operations is very high is a case of India. There are many reasons for failures in this context. The Disaster Rescue & Management teams are not equipped with sufficient teams and equipment to lift the child safe from the well.</p>
+<br>
+ <h2>Current Methods</h2>
+
+<p> 
+    The common approach to determining the depth of a trapped individual involves using a rope. In standard rescue operations conducted by the Army and National Disaster Response Force teams, a parallel pit is dug next to the borewell, reaching close to the depth of the trapped individual. A horizontal passage is then excavated to connect the location of the individual.
+</p>
+
+<br>
+ <h2>Existing Rescue Techniques</h2>
+
+<p> 
+    A minor delay in assembling necessary resources for a rescue operation can prove fatal. In areas where the ground beneath the borewell is rocky below a certain depth, the chances of successfully rescuing a trapped individual are significantly reduced. Issues such as oxygen depletion and inadequate lighting further complicate rescue efforts. <br>
+
+There exists no specialized equipment or proper techniques tailored for rescuing individuals trapped in borewells, often resulting in rescue operations lasting over 72 hours. Recent borewell incidents in India illustrate a recurring pattern of unsatisfactory outcomes due to prolonged rescue times and reliance on traditional methods.
+
+</p>
+
+
+<h2>List of Borewell Mishaps</h2>
+
+<p style="font-size: 24px;"> 
+    Below is a list of recent borewell incidents across different states in India, highlighting instances where rescue operations did not yield desired results:
+</p>
+
+<div class="tableHolder"><table class="tabluarData" border="1px">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Name of Child</th>
+            <th>Age</th>
+            <th>Place of Incident</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Ms. R Madhumitha</td>
+            <td>3</td>
+            <td>Villupuram Dist, Tamil Nadu</td>
+            <td>Recovered, Died in Hospital</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Mr. Radheshyam</td>
+            <td>2.5</td>
+            <td>Churu Dist, Jaipur</td>
+            <td>Died in Hospital</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Mr. Chotu</td>
+            <td>9</td>
+            <td>Karauli Dist, Rajasthan</td>
+            <td>Not alive</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Ms. Tanu</td>
+            <td>4</td>
+            <td>Palwal, Haryana</td>
+            <td>Alive</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Ms. Muthulakshmi</td>
+            <td>7</td>
+            <td>Suryapalli Village, Tamilnadu</td>
+            <td>Died in Hospital</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Mr. Ajith</td>
+            <td>5</td>
+            <td>Karim Nagar, Andhra Pradesh</td>
+            <td>Not alive</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Ms. Mahi</td>
+            <td>5</td>
+            <td>Gurgaon</td>
+            <td>Not alive</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Mr. Ankit</td>
+            <td>4</td>
+            <td>Raimalpura Village, Kochi</td>
+            <td>Not alive</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Mr. Tirumalesh</td>
+            <td>1</td>
+            <td>Mahbubnagar, Andhrapradesh</td>
+            <td>Not alive</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Ms. Asmita</td>
+            <td>1</td>
+            <td>Rajkot, Gujarat</td>
+            <td>Not alive</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Mr. Om Santosh Devre</td>
+            <td>1.5</td>
+            <td>Nashik, Maharashtra</td>
+            <td>Not alive</td>
+        </tr>
+    </tbody>
+</table> </div>
+
+
+
+<br> <br> <br>
+<div class="hrholder" style="justify-content: start;"> 
+    <hr width="50%" color="orange" size="5px">
+ </div>
+
+ <br> <br> <br>
+                
+
+    <br> <br> <br>
+<div class="hrholder" style="justify-content: end"> 
+    <hr width="50%" color="orange" size="5px">
+ </div>
+
+ <br> <br> <br>
+
+    <h1 id="contactUs">CONTACT US</h1> <br>
+
+    <p>Thank you for taking the time to review our project.We are excited about the opportunity to collaborate and bring creativity and innovation to your projects. If you have any questions, feedback, or would like to discuss potential opportunities further, please don't hesitate to contact us. We are always open to new ideas and eager to contribute our skills and expertise to meaningful projects. Looking forward to connecting with you soon!</p>
+
+    <div class="hrholder" style="justify-content: center"> 
+        <hr width="50%" color="orange" size="5px">
+     </div> <br> <br>
+
+     <h2>OUR CONTACTS : </h2>
+
+     <div class="con-card-holder">
+     <div class="con-card"> 
+
+        <img src="icons8-phone-50.png">
+        <p class="con-src">PHONE NUMBER</p>
+
+        <p class="con-info" style="color: black;">- 7087555337</p>
+ 
+     </div>
+     <div class="con-card">
+
+            <img src="icons8-gmail-50.png">
+            <p class="con-src">E-MAIL</p>
+
+            <p class="con-info" style="color: black;">- rohitsingh200527@gmail.com</p>
+     </div>
+    </div>
+    
+
+
+</div>
+            
+           
+        </div>
+        
+        </div>
+        <script src="login_pop.js"></script>
+
+</body>
+</html>
